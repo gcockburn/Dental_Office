@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Dental_Office;
 
 /**
@@ -88,8 +84,7 @@ public class Check_In extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submit_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_nameActionPerformed
-        Appointment A1 = new Appointment(pName.getText()); 
-        A1.checkIn(); 
+
     }//GEN-LAST:event_submit_nameActionPerformed
 
     /**

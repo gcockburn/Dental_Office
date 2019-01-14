@@ -18,5 +18,6 @@ public class Appointment {
     
     public void checkIn() {
         checkedIn = true;
+        System.out.println("Checked In");
     }
 }

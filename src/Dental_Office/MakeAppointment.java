@@ -169,7 +169,7 @@ public class MakeAppointment extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAppActionPerformed
-        Appointment A1
+        Appointment A1 = new Appointment(patientName.getText(), aDentist.getSelectedItem(),(String)aProcedure.getSelectedItem(), Integer.parseInt(aDay.getText()), aMonth.getSelectedItem(), Integer.parseInt(aYear.getText()  ), aDetails.getText());
     }//GEN-LAST:event_createAppActionPerformed
 
     /**

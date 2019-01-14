@@ -8,8 +8,14 @@ public class Appointment {
     private int day;
     private int month;
     private int year;
+    private boolean checkedIn;
     
     public Appointment() {
         
+        checkedIn = false;
+    }
+    
+    public void checkIn() {
+        checkedIn = true;
     }
 }

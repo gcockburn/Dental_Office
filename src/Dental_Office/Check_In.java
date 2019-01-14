@@ -28,7 +28,7 @@ public class Check_In extends javax.swing.JFrame {
     private void initComponents() {
 
         Enter_Name = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        pName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         submit_name = new javax.swing.JButton();
 
@@ -37,6 +37,11 @@ public class Check_In extends javax.swing.JFrame {
         jLabel1.setText("Please enter your last name");
 
         submit_name.setText("ENTER");
+        submit_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit_nameActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Enter_NameLayout = new javax.swing.GroupLayout(Enter_Name);
         Enter_Name.setLayout(Enter_NameLayout);
@@ -46,7 +51,7 @@ public class Check_In extends javax.swing.JFrame {
                 .addGroup(Enter_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Enter_NameLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pName, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Enter_NameLayout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addComponent(submit_name)))
@@ -62,7 +67,7 @@ public class Check_In extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(submit_name)
                 .addContainerGap(121, Short.MAX_VALUE))
@@ -81,6 +86,11 @@ public class Check_In extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submit_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_nameActionPerformed
+        Appointment A1 = new Appointment(pName.getText()); 
+        A1.checkIn(); 
+    }//GEN-LAST:event_submit_nameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,7 +130,7 @@ public class Check_In extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Enter_Name;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField pName;
     private javax.swing.JButton submit_name;
     // End of variables declaration//GEN-END:variables
 }

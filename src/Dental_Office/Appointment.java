@@ -11,9 +11,10 @@ public class Appointment {
     private String details;
     private boolean checkedIn;
     
-    public Appointment(String pn, String p, int d, int m, int y, String det) {
+    public Appointment(String pn, String dn, String p, int d, int m, int y, String det) {
         
         patientName = pn;
+        dentistName = dn;
         procedure = p;
         day = d;
         month = m;

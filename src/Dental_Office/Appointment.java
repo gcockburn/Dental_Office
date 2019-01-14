@@ -10,8 +10,9 @@ public class Appointment {
     private int year;
     private boolean checkedIn;
     
-    public Appointment() {
+    public Appointment(String pn) {
         
+        patientName = pn;
         checkedIn = false;
     }
     

@@ -18,6 +18,7 @@ public class LoginWindow extends JFrame implements ActionListener{
     private JTextField userField;
     private JTextField passField;
     private JButton loginBtn;
+    private JButton patientBtn;
     
     public LoginWindow() {
         
@@ -58,13 +59,15 @@ public class LoginWindow extends JFrame implements ActionListener{
         loginBtn.setBounds(15, 200, 80, 30);
         mainPanel.add(loginBtn);
         
+        patientBtn = new JButton("I am a patient");
+        patientBtn.setBounds(120, 200, 150, 30);
+        mainPanel.add(patientBtn);
+        
         loginBtn.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
-        System.out.println("E");
         
         if(userField.getText().equalsIgnoreCase("sec")) {
             

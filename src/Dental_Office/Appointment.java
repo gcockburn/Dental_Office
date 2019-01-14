@@ -6,12 +6,12 @@ public class Appointment {
     private String dentistName;
     private String procedure;
     private int day;
-    private int month;
+    private String month;
     private int year;
     private String details;
     private boolean checkedIn;
     
-    public Appointment(String pn, String dn, String p, int d, int m, int y, String det) {
+    public Appointment(String pn, String dn, String p, int d, String m, int y, String det) {
         
         patientName = pn;
         dentistName = dn;
@@ -39,7 +39,7 @@ public class Appointment {
         return day;
     }
     
-    public int getMonth() {
+    public String getMonth() {
         return month;
     }
     
@@ -63,7 +63,7 @@ public class Appointment {
         day = d;
     }
 
-    public void setMonth(int m) {
+    public void setMonth(String m) {
         month = m;
     }
 

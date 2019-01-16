@@ -160,7 +160,11 @@ public class MakeAppointment extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAppActionPerformed
-        Appointment A1 = new Appointment(patientName.getText(), (String) aDentist.getSelectedItem(), (String)aProcedure.getSelectedItem(), Integer.parseInt(aDay.getText()),(String) aMonth.getSelectedItem(), Integer.parseInt(aYear.getText()  ), aDetails.getText());
+        
+        if(!patientName.getText().equals("") && (Integer.parseInt(aDay.getText()) != 0 && !aDay.getText().equals("")) && (Integer.parseInt(aYear.getText()) != 0 && !aYear.getText().equals(""))) {
+            Main.appointments.add(new Appointment(patientName.getText(), (String) aDentist.getSelectedItem(), (String)aProcedure.getSelectedItem(), Integer.parseInt(aDay.getText()),(String) aMonth.getSelectedItem(), Integer.parseInt(aYear.getText()), aDetails.getText()));
+            System.out.println("Appointment: " + Main.appointments.get(0).getPName() + " " + Main.appointments.get(0).getDName()+ " " + Main.appointments.get(0).getDay() + "/" + Main.appointments.get(0).getMonth() + "/" + Main.appointments.get(0).getYear());
+        }
     }//GEN-LAST:event_createAppActionPerformed
 
 //    public static void main(String args[]) {

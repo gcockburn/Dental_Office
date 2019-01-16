@@ -1,11 +1,14 @@
 
 package Dental_Office;
 
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 /**
  *
  * @author g.cockburn
  */
-public class Check_In extends javax.swing.JFrame {
+public class Check_In extends JFrame {
 
     /**
      * Creates new form Check_In
@@ -87,9 +90,6 @@ public class Check_In extends javax.swing.JFrame {
 
     }//GEN-LAST:event_submit_nameActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

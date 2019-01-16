@@ -11,7 +11,11 @@ public class Main {
     
     public static void main(String[] args) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         appointments.add(new Appointment("Elliot Gam", "John Hammerstein", "Tooth Cleaning", 23, "October", 2019, "" ));
+=======
+        //appointments.add(new Appointment("Elliot Gam", ));
+>>>>>>> 53dd836ec8cfefd7709df57ca0f66023e73dc89a
 =======
         //appointments.add(new Appointment("Elliot Gam", ));
 >>>>>>> 53dd836ec8cfefd7709df57ca0f66023e73dc89a

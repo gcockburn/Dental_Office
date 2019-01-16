@@ -1,6 +1,8 @@
 package Dental_Office;
 
-public class MakeAppointment extends javax.swing.JFrame {
+import javax.swing.JFrame;
+
+public class MakeAppointment extends JFrame {
 
     public MakeAppointment() {
         
@@ -8,6 +10,8 @@ public class MakeAppointment extends javax.swing.JFrame {
         setResizable(false);
         
         initComponents();
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     @SuppressWarnings("unchecked")

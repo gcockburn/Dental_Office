@@ -172,7 +172,9 @@ public class ChangeAppointment extends JFrame {
        int index = appointments.getSelectedIndex(); 
        pName.setText(Main.appointments.get(index).getPName());
        pDay.setText("" + Main.appointments.get(index).getDay());
-       pDay.setText("" + Main.appointments.get(index).getDay());
+       pMonth.setSelectedIndex(Main.appointments.get(index).getMonth());
+       pYear.setText("" + Main.appointments.get(index).getYear()); 
+       pDetails.setText(Main.appointments.get(index).getDetails());
        
     }//GEN-LAST:event_appointmentsActionPerformed
 

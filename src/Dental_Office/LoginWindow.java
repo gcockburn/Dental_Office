@@ -76,5 +76,13 @@ public class LoginWindow extends JFrame implements ActionListener{
                 new MakeAppointment().setVisible(true);
             }
         }
+        
+        else if(userField.getText().equalsIgnoreCase("dent")) {
+            
+            if(passField.getText().equals("ist")) {
+                
+                new ChangeAppointment().setVisible(true);
+            }
+        }
     }
 }

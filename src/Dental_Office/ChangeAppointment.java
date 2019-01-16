@@ -5,6 +5,10 @@ import javax.swing.JFrame;
 public class ChangeAppointment extends JFrame {
 
     public ChangeAppointment() {
+        
+        setTitle("Change Appointment");
+        setResizable(false);
+        
         initComponents();
         
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

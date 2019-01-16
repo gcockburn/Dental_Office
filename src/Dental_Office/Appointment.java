@@ -3,8 +3,8 @@ package Dental_Office;
 public class Appointment {
     
     private String patientName;
-    private String dentistName;
-    private String procedure;
+    private int dentist;
+    private int procedure;
     private String time;
     private int day;
     private int month;
@@ -12,10 +12,10 @@ public class Appointment {
     private String details;
     private boolean checkedIn;
     
-    public Appointment(String pn, String dn, String p, String t, int d, int m, int y, String det) {
+    public Appointment(String pn, int dn, int p, String t, int d, int m, int y, String det) {
         
         patientName = pn;
-        dentistName = dn;
+        dentist = dn;
         procedure = p;
         time= t;
         day = d;
@@ -29,11 +29,11 @@ public class Appointment {
         return patientName;
     }
     
-    public String getDName() {
-        return dentistName;
+    public int getDName() {
+        return dentist;
     }
     
-    public String getProcedure() {
+    public int getProcedure() {
         return procedure;
     }
     
@@ -52,16 +52,20 @@ public class Appointment {
     public int getYear() {
         return year;
     }
+    
+    public String getDetails() {
+        return details;
+    }
 
     public void setPatientName(String pn) {
         patientName = pn;
     }
 
-    public void setDentistName(String dn) {
-        dentistName = dn;
+    public void setDentistName(int dn) {
+        dentist = dn;
     }
 
-    public void setProcedure(String p) {
+    public void setProcedure(int p) {
         procedure = p;
     }
     
@@ -79,6 +83,10 @@ public class Appointment {
 
     public void setYear(int y) {
         year = y;
+    }
+    
+    public void setDetails(String d) {
+        details = d;
     }
     
     public void checkIn() {

@@ -5,17 +5,19 @@ public class Appointment {
     private String patientName;
     private String dentistName;
     private String procedure;
+    private String time;
     private int day;
-    private String month;
+    private int month;
     private int year;
     private String details;
     private boolean checkedIn;
     
-    public Appointment(String pn, String dn, String p, int d, String m, int y, String det) {
+    public Appointment(String pn, String dn, String p, String t, int d, int m, int y, String det) {
         
         patientName = pn;
         dentistName = dn;
         procedure = p;
+        time= t;
         day = d;
         month = m;
         year = y;
@@ -35,11 +37,15 @@ public class Appointment {
         return procedure;
     }
     
+    public String getTime() {
+        return time;
+    }
+    
     public int getDay() {
         return day;
     }
     
-    public String getMonth() {
+    public int getMonth() {
         return month;
     }
     
@@ -58,20 +64,22 @@ public class Appointment {
     public void setProcedure(String p) {
         procedure = p;
     }
+    
+    public void setTime(String t) {
+        time = t;
+    }
 
     public void setDay(int d) {
         day = d;
     }
 
-    public void setMonth(String m) {
+    public void setMonth(int m) {
         month = m;
     }
 
     public void setYear(int y) {
         year = y;
     }
-    
-    
     
     public void checkIn() {
         checkedIn = true;

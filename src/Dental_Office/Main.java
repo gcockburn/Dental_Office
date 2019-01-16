@@ -10,7 +10,7 @@ public class Main {
     public static ArrayList<Appointment> appointments = new ArrayList();
     
     public static void main(String[] args) {
-        appointments.add(new Appointment("Elliot Gam", ));
+        //appointments.add(new Appointment("Elliot Gam", ));
         usernames.add("sec");
         passwords.add("ret");
         usernames.add("dent");

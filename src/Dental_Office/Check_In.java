@@ -144,8 +144,9 @@ public class Check_In extends JFrame {
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         //main purpose is to set combo box into having names so patient can confirm they're here
+        //Box should contain any patients with the same last name as written in nameBox
         for (int i = 0; i < Main.appointments.size(); i++) {
-            if(pName.getText().contains(Main.appointments.get(i).getDetails())){
+            if(pName.getText().contains(Main.appointments.get(i).getPName())){
                nameBox.addItem(Main.appointments.get(i).getPName()); 
             }
             
@@ -153,7 +154,9 @@ public class Check_In extends JFrame {
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        //to call method checkedIn a specific appointment
+        //problem in that when we add items to the item box, the index's will not stay the same
+        //How to call the item in main to change checkedin to true
+        //do we have to crossref using selectedItem with all indexs in the appointments list?
     }//GEN-LAST:event_confirmButtonActionPerformed
 
 //    public static void main(String args[]) {

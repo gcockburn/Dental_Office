@@ -64,6 +64,7 @@ public class LoginWindow extends JFrame implements ActionListener{
         mainPanel.add(patientBtn);
         
         loginBtn.addActionListener(this);
+         
     }
 
     @Override
@@ -86,10 +87,5 @@ public class LoginWindow extends JFrame implements ActionListener{
         }
         
     }
-    public void patientBtnactionPerformed(ActionEvent ae){
-       new Check_In().setVisible(true); 
-    }
-
-       
 
 }

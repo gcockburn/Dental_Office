@@ -84,5 +84,12 @@ public class LoginWindow extends JFrame implements ActionListener{
                 new ChangeAppointment().setVisible(true);
             }
         }
+        
     }
+    public void patientBtnactionPerformed(ActionEvent ae){
+       new Check_In().setVisible(true); 
+    }
+
+       
+
 }

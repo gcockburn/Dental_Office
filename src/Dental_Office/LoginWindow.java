@@ -64,25 +64,35 @@ public class LoginWindow extends JFrame implements ActionListener{
         mainPanel.add(patientBtn);
         
         loginBtn.addActionListener(this);
+        patientBtn.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        if(userField.getText().equalsIgnoreCase("sec")) {
-            
-            if(passField.getText().equals("ret")) {
-                
-                new MakeAppointment().setVisible(true);
+        JButton source = (JButton)ae.getSource();
+        
+        if(source == loginBtn) {
+            if(userField.getText().equalsIgnoreCase("sec")) {
+
+                if(passField.getText().equals("ret")) {
+
+                    new MakeAppointment().setVisible(true);
+                }
+            }
+
+            else if(userField.getText().equalsIgnoreCase("dent")) {
+
+                if(passField.getText().equals("ist")) {
+
+                    new ChangeAppointment().setVisible(true);
+                }
             }
         }
         
-        else if(userField.getText().equalsIgnoreCase("dent")) {
+        else if(source == patientBtn) {
             
-            if(passField.getText().equals("ist")) {
-                
-                new ChangeAppointment().setVisible(true);
-            }
+            new CheckIn().setVisible(true);
         }
     }
 }

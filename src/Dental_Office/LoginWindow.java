@@ -18,7 +18,6 @@ public class LoginWindow extends JFrame implements ActionListener{
     private JTextField userField;
     private JTextField passField;
     private JButton loginBtn;
-    private JButton patientBtn;
     
     public LoginWindow() {
         
@@ -59,12 +58,7 @@ public class LoginWindow extends JFrame implements ActionListener{
         loginBtn.setBounds(15, 200, 80, 30);
         mainPanel.add(loginBtn);
         
-        patientBtn = new JButton("I am a patient");
-        patientBtn.setBounds(120, 200, 150, 30);
-        mainPanel.add(patientBtn);
-        
         loginBtn.addActionListener(this);
-        patientBtn.addActionListener(this);
     }
 
     @Override
@@ -77,7 +71,8 @@ public class LoginWindow extends JFrame implements ActionListener{
 
                 if(passField.getText().equals("ret")) {
 
-                    new MakeAppointment().setVisible(true);
+                    new AppointmentWindow().setVisible(true);
+                    //new MakeAppointment().setVisible(true);
                 }
             }
 
@@ -85,14 +80,10 @@ public class LoginWindow extends JFrame implements ActionListener{
 
                 if(passField.getText().equals("ist")) {
 
-                    new ChangeAppointment().setVisible(true);
+                    new AppointmentWindow().setVisible(true);
+                    //new ChangeAppointment().setVisible(true);
                 }
             }
-        }
-        
-        else if(source == patientBtn) {
-            
-            new CheckIn().setVisible(true);
         }
     }
 }

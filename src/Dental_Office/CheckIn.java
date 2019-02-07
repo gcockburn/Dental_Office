@@ -7,13 +7,19 @@ import javax.swing.WindowConstants;
  *
  * @author g.cockburn
  */
-public class Check_In extends JFrame {
+public class CheckIn extends JFrame {
 
     /**
      * Creates new form Check_In
      */
-    public Check_In() {
+    public CheckIn() {
+        
+        setTitle("Check In");
+        setResizable(false);
+        
         initComponents();
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**

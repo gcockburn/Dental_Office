@@ -34,7 +34,7 @@ public class ChangeAppointment extends JFrame {
         pMonth = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         pYear = new javax.swing.JTextField();
-        Procedures = new javax.swing.JComboBox<>();
+        procedures = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         dentists = new javax.swing.JComboBox<>();
@@ -43,6 +43,8 @@ public class ChangeAppointment extends JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         pTime = new javax.swing.JTextField();
+        confirmBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -72,7 +74,12 @@ public class ChangeAppointment extends JFrame {
 
         jLabel5.setText("Year:");
 
-        Procedures.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tooth Cleaning", "Cavity Removal", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation" }));
+        procedures.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tooth Cleaning", "Cavity Removal", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation" }));
+        procedures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                proceduresActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Procedure to be performed:");
 
@@ -88,6 +95,20 @@ public class ChangeAppointment extends JFrame {
 
         jLabel9.setText("Time:");
 
+        confirmBtn.setText("Confirm");
+        confirmBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmBtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,7 +123,7 @@ public class ChangeAppointment extends JFrame {
                         .addGap(68, 68, 68)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(dentists, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Procedures, 0, 1, Short.MAX_VALUE))
+                            .addComponent(procedures, 0, 1, Short.MAX_VALUE))
                         .addContainerGap(58, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -140,6 +161,12 @@ public class ChangeAppointment extends JFrame {
                                         .addComponent(pTime, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(40, 40, 40))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(confirmBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(78, 78, 78))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +193,7 @@ public class ChangeAppointment extends JFrame {
                     .addComponent(pYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Procedures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(procedures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -174,13 +201,16 @@ public class ChangeAppointment extends JFrame {
                     .addComponent(dentists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel8)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(confirmBtn))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -204,6 +234,7 @@ public class ChangeAppointment extends JFrame {
         pMonth.setSelectedIndex(Main.appointments.get(index).getMonth());
         pYear.setText("" + Main.appointments.get(index).getYear());
         pTime.setText("" + Main.appointments.get(index).getTime());
+        procedures.setSelectedIndex(Main.appointments.get(index).getProcedure());
         pDetails.setText(Main.appointments.get(index).getDetails());
 
     }//GEN-LAST:event_appointmentsActionPerformed
@@ -211,6 +242,28 @@ public class ChangeAppointment extends JFrame {
     private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pNameActionPerformed
+
+    private void proceduresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceduresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_proceduresActionPerformed
+
+    private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
+        
+        int index = appointments.getSelectedIndex();
+        Main.appointments.get(index).setPatientName(pName.getText());
+        Main.appointments.get(index).setTime(pTime.getText());
+        Main.appointments.get(index).setDay(Integer.parseInt(pDay.getText()));
+        Main.appointments.get(index).setMonth(pMonth.getSelectedIndex());
+        Main.appointments.get(index).setYear(Integer.parseInt(pYear.getText()));
+        Main.appointments.get(index).setProcedure(procedures.getSelectedIndex());
+        Main.appointments.get(index).setDentistName(dentists.getSelectedIndex());
+        Main.appointments.get(index).setDetails(pDetails.getText());
+        
+    }//GEN-LAST:event_confirmBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
@@ -245,9 +298,10 @@ public class ChangeAppointment extends JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Procedures;
     private javax.swing.JComboBox<String> appointments;
+    private javax.swing.JButton confirmBtn;
     private javax.swing.JComboBox<String> dentists;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -266,5 +320,6 @@ public class ChangeAppointment extends JFrame {
     private javax.swing.JTextField pName;
     private javax.swing.JTextField pTime;
     private javax.swing.JTextField pYear;
+    private javax.swing.JComboBox<String> procedures;
     // End of variables declaration//GEN-END:variables
 }

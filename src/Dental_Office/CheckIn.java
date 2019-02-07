@@ -7,13 +7,19 @@ import javax.swing.WindowConstants;
  *
  * @author g.cockburn
  */
-public class Check_In extends JFrame {
+public class CheckIn extends JFrame {
 
     /**
      * Creates new form Check_In
      */
-    public Check_In() {
+    public CheckIn() {
+        
+        setTitle("Check In");
+        setResizable(false);
+        
         initComponents();
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -52,7 +58,7 @@ public class Check_In extends JFrame {
 
         Enter_Name.setBackground(new java.awt.Color(102, 255, 204));
 
-        jLabel1.setText("Please enter your last name");
+        jLabel1.setText("Please enter your first and last name");
 
         enterButton.setText("ENTER");
         enterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +71,7 @@ public class Check_In extends JFrame {
         Enter_Name.setLayout(Enter_NameLayout);
         Enter_NameLayout.setHorizontalGroup(
             Enter_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Enter_NameLayout.createSequentialGroup()
+            .addGroup(Enter_NameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(Enter_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Enter_NameLayout.createSequentialGroup()
@@ -73,18 +79,17 @@ public class Check_In extends JFrame {
                         .addGap(65, 65, 65))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Enter_NameLayout.createSequentialGroup()
                         .addComponent(enterButton)
-                        .addGap(171, 171, 171))))
-            .addGroup(Enter_NameLayout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(171, 171, 171))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Enter_NameLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(118, 118, 118))))
         );
         Enter_NameLayout.setVerticalGroup(
             Enter_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Enter_NameLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(enterButton)

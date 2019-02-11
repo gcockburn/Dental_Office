@@ -6,9 +6,9 @@ import javax.swing.SwingUtilities;
 
 public class Main {
     
-    public static ArrayList<String> usernames = new ArrayList<String>();
-    public static ArrayList<String> passwords = new ArrayList<String>();
-    public static ArrayList<Appointment> appointments = new ArrayList<Appointment>();
+    public static ArrayList<String> usernames = new ArrayList<>();
+    public static ArrayList<String> passwords = new ArrayList<>();
+    public static ArrayList<Appointment> appointments = new ArrayList<>();
     
     public static void main(String[] args) {
         usernames.add("sec");

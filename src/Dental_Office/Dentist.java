@@ -6,8 +6,11 @@ public class Dentist {
     private double salary;
     private double satisfaction; 
     
-    public Dentist() {
-        
+    public Dentist(String n, String D, double sal, double sat) {
+        name = n;
+        Degrees = D;
+        salary = sal;
+        satisfaction = sat; 
     }
     
     public String getName(){
@@ -15,5 +18,11 @@ public class Dentist {
     }
     public String getDegrees(){
         return Degrees; 
+    }
+    public double getSalary(){
+        return salary;
+    }
+    public double getSatisfaction(){
+        return satisfaction; 
     }
 }

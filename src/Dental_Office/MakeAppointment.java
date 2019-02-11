@@ -13,6 +13,9 @@ public class MakeAppointment extends JFrame {
         initComponents();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        for (int i = 0; i < Main.dentists.size(); i++) {
+            aDentist.addItem(Main.dentists.get(i).getName());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -207,7 +210,7 @@ public class MakeAppointment extends JFrame {
     private void aTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aTimeActionPerformed
-    private void Error_Message(int type){
+    private void Error_Message(int type) {
         JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
     }
 //    public static void main(String args[]) {

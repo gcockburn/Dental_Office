@@ -1,10 +1,12 @@
 package Dental_Office;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class AppointmentWindow extends JFrame {
+public class AppointmentWindow extends JFrame implements ActionListener {
     
     private JPanel mainPanel;
     private JButton createAppoint;
@@ -37,5 +39,29 @@ public class AppointmentWindow extends JFrame {
         cancelAppoint = new JButton("Cancel Appointment");
         cancelAppoint.setBounds(320, 530, 150, 30);
         mainPanel.add(cancelAppoint);
+        
+        createAppoint.addActionListener(this);
+        changeAppoint.addActionListener(this);
+        cancelAppoint.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        
+        JButton source = (JButton)ae.getSource();
+        
+        if(source == createAppoint) {
+            
+            new MakeAppointment().setVisible(true);
+        }
+        
+        else if(source == changeAppoint) {
+            
+            new ChangeAppointment().setVisible(true);
+        }
+        
+        else if(source == cancelAppoint) {
+            
+        }
     }
 }

@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 public class AppointmentWindow extends JFrame implements ActionListener {
     
     private JPanel mainPanel;
+    private AppointmentList appointList;
     private JButton createAppoint;
     private JButton changeAppoint;
     private JButton cancelAppoint;
@@ -27,6 +28,10 @@ public class AppointmentWindow extends JFrame implements ActionListener {
         mainPanel.setBounds(0, 0, 800, 600);
         mainPanel.setLayout(null);
         add(mainPanel);
+        
+        appointList = new AppointmentList();
+        appointList.setBounds(510, 30, 250, 500);
+        mainPanel.add(appointList);
         
         createAppoint = new JButton("Create Appointment");
         createAppoint.setBounds(10, 530, 140, 30);

@@ -43,7 +43,7 @@ public class LoginWindow extends JFrame implements ActionListener{
         mainPanel.add(userLbl);
         
         userField = new JTextField();
-        userField.setBounds(100, 100, 150, 20);
+        userField.setBounds(100, 100, 150, 26);
         mainPanel.add(userField);
         
         passLbl = new JLabel("Password:");
@@ -51,7 +51,7 @@ public class LoginWindow extends JFrame implements ActionListener{
         mainPanel.add(passLbl);
         
         passField = new JTextField();
-        passField.setBounds(100, 150, 150, 20);
+        passField.setBounds(100, 150, 150, 26);
         mainPanel.add(passField);
         
         loginBtn = new JButton("Login");

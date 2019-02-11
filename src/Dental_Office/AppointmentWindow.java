@@ -1,11 +1,15 @@
 package Dental_Office;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class AppointmentWindow extends JFrame {
     
     private JPanel mainPanel;
+    private JButton createAppoint;
+    private JButton changeAppoint;
+    private JButton cancelAppoint;
     
     public AppointmentWindow() {
         
@@ -22,5 +26,8 @@ public class AppointmentWindow extends JFrame {
         mainPanel.setLayout(null);
         add(mainPanel);
         
+        createAppoint = new JButton("Create Appointment");
+        createAppoint.setBounds(50, 300, 80, 20);
+        mainPanel.add(createAppoint);
     }
 }

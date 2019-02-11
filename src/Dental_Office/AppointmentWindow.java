@@ -15,19 +15,27 @@ public class AppointmentWindow extends JFrame {
         
         super("Appointments");
         
-        setSize(380, 350);
+        setSize(800, 600);
         setVisible(true);
         setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(null);
         
         mainPanel = new JPanel();
-        mainPanel.setBounds(0, 0, 350, 300);
+        mainPanel.setBounds(0, 0, 800, 600);
         mainPanel.setLayout(null);
         add(mainPanel);
         
         createAppoint = new JButton("Create Appointment");
-        createAppoint.setBounds(50, 300, 80, 20);
+        createAppoint.setBounds(10, 530, 140, 30);
         mainPanel.add(createAppoint);
+        
+        changeAppoint = new JButton("Change Appointment");
+        changeAppoint.setBounds(160, 530, 150, 30);
+        mainPanel.add(changeAppoint);
+        
+        cancelAppoint = new JButton("Cancel Appointment");
+        cancelAppoint.setBounds(320, 530, 150, 30);
+        mainPanel.add(cancelAppoint);
     }
 }

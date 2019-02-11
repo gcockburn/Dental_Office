@@ -46,6 +46,7 @@ public class ChangeAppointment extends JFrame {
         pTime = new javax.swing.JTextField();
         confirmBtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        errorBox = new javax.swing.JTextField();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -161,13 +162,13 @@ public class ChangeAppointment extends JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(pTime, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(40, 40, 40))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(confirmBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(78, 78, 78))
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(confirmBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(errorBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,11 +208,13 @@ public class ChangeAppointment extends JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(confirmBtn))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(confirmBtn)
+                        .addComponent(errorBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,7 +252,7 @@ public class ChangeAppointment extends JFrame {
     }//GEN-LAST:event_proceduresActionPerformed
 
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
-        
+
         int error = 0;
         for (int i = 0; i < Main.appointments.size(); i++) {
             if (Integer.parseInt(pYear.getText()) == (Main.appointments.get(i).getYear())) {
@@ -257,8 +260,8 @@ public class ChangeAppointment extends JFrame {
                     if (Integer.parseInt(pDay.getText()) == (Main.appointments.get(i).getDay())) {
                         if (pTime.getText().equals(Main.appointments.get(i).getTime())) {
                             if (dentists.getSelectedIndex() == Main.appointments.get(i).getDName()) {
-                                JOptionPane.showMessageDialog(null, "Dentist booked");
-
+                                
+                                errorBox.setText("Error: Dentist Booked");
                                 error = 1;
                             }
                         }
@@ -319,6 +322,7 @@ public class ChangeAppointment extends JFrame {
     private javax.swing.JComboBox<String> appointments;
     private javax.swing.JButton confirmBtn;
     private javax.swing.JComboBox<String> dentists;
+    private javax.swing.JTextField errorBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

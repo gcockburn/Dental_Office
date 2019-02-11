@@ -6,12 +6,11 @@ import javax.swing.SwingUtilities;
 
 public class Main {
     
-    public static ArrayList<String> usernames = new ArrayList();
-    public static ArrayList<String> passwords = new ArrayList();
-    public static ArrayList<Appointment> appointments = new ArrayList();
+    public static ArrayList<String> usernames = new ArrayList<String>();
+    public static ArrayList<String> passwords = new ArrayList<String>();
+    public static ArrayList<Appointment> appointments = new ArrayList<Appointment>();
     
     public static void main(String[] args) {
-        //appointments.add(new Appointment("Elliot Gam", ));
         usernames.add("sec");
         passwords.add("ret");
         usernames.add("dent");

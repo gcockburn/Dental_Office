@@ -191,16 +191,14 @@ public class MakeAppointment extends JFrame {
 
     private void createAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAppActionPerformed
         int error = 0;
-        JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
+        System.out.println("Test 0");
         for (int i = 0; i < Main.appointments.size(); i++) {
             if (Integer.parseInt(aYear.getText()) == (Main.appointments.get(i).getYear())) {
                 if (aMonth.getSelectedIndex() == Main.appointments.get(i).getMonth()) {
                     if (Integer.parseInt(aDay.getText()) == (Main.appointments.get(i).getDay())) {
                         if (aTime.getText().equals(Main.appointments.get(i).getTime())) {
                             if (aDentist.getSelectedIndex() == Main.appointments.get(i).getDName()) {
-                                errorBox.setText("Error: Dentist is already booked for that time");
                                 error = 1;
-                                Error_Message(1); 
                             }
                         }
                     }

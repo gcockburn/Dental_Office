@@ -1,6 +1,7 @@
 package Dental_Office;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MakeAppointment extends JFrame {
 
@@ -190,6 +191,7 @@ public class MakeAppointment extends JFrame {
 
     private void createAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAppActionPerformed
         int error = 0;
+        JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
         for (int i = 0; i < Main.appointments.size(); i++) {
             if (Integer.parseInt(aYear.getText()) == (Main.appointments.get(i).getYear())) {
                 if (aMonth.getSelectedIndex() == Main.appointments.get(i).getMonth()) {
@@ -198,6 +200,7 @@ public class MakeAppointment extends JFrame {
                             if (aDentist.getSelectedIndex() == Main.appointments.get(i).getDName()) {
                                 errorBox.setText("Error: Dentist is already booked for that time");
                                 error = 1;
+                                Error_Message(1); 
                             }
                         }
                     }
@@ -207,7 +210,7 @@ public class MakeAppointment extends JFrame {
         if (error == 0) {
             if (!patientName.getText().equals("") && (Integer.parseInt(aDay.getText()) != 0 && !aDay.getText().equals("")) && (Integer.parseInt(aYear.getText()) != 0 && !aYear.getText().equals("")) && !aTime.getText().equals("")) {
                 Main.appointments.add(new Appointment(patientName.getText(), aDentist.getSelectedIndex(), aProcedure.getSelectedIndex(), aTime.getText(), Integer.parseInt(aDay.getText()), aMonth.getSelectedIndex(), Integer.parseInt(aYear.getText()), aDetails.getText()));
-                //System.out.println("Appointment: " + Main.appointments.get(0).getPName() + " " + Main.appointments.get(0).getDName()+ " " + Main.appointments.get(0).getDay() + "/" + Main.appointments.get(0).getMonth() + "/" + Main.appointments.get(0).getYear());
+                //System.out.println("Appointment: " + Main.appointments.get(0).getPName() + " " + Main.appointments.get(0).getDName()+ " " + Main.appointments.get(0).getDay() + "/" + Main.appointments.get(0).getMonth() + "/" + Main.appointments.get(0).getYear());  
             }
         }
     }//GEN-LAST:event_createAppActionPerformed
@@ -215,7 +218,9 @@ public class MakeAppointment extends JFrame {
     private void aTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aTimeActionPerformed
-
+    private void Error_Message(int type){
+        JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
+    }
 //    public static void main(String args[]) {
 //        
 //        try {

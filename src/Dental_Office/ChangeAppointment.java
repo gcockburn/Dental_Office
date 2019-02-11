@@ -1,6 +1,7 @@
 package Dental_Office;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class ChangeAppointment extends JFrame {
 
@@ -249,16 +250,33 @@ public class ChangeAppointment extends JFrame {
 
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
         
-        int index = appointments.getSelectedIndex();
-        Main.appointments.get(index).setPatientName(pName.getText());
-        Main.appointments.get(index).setTime(pTime.getText());
-        Main.appointments.get(index).setDay(Integer.parseInt(pDay.getText()));
-        Main.appointments.get(index).setMonth(pMonth.getSelectedIndex());
-        Main.appointments.get(index).setYear(Integer.parseInt(pYear.getText()));
-        Main.appointments.get(index).setProcedure(procedures.getSelectedIndex());
-        Main.appointments.get(index).setDentistName(dentists.getSelectedIndex());
-        Main.appointments.get(index).setDetails(pDetails.getText());
-        
+        int error = 0;
+        for (int i = 0; i < Main.appointments.size(); i++) {
+            if (Integer.parseInt(pYear.getText()) == (Main.appointments.get(i).getYear())) {
+                if (pMonth.getSelectedIndex() == Main.appointments.get(i).getMonth()) {
+                    if (Integer.parseInt(pDay.getText()) == (Main.appointments.get(i).getDay())) {
+                        if (pTime.getText().equals(Main.appointments.get(i).getTime())) {
+                            if (dentists.getSelectedIndex() == Main.appointments.get(i).getDName()) {
+                                JOptionPane.showMessageDialog(null, "Dentist booked");
+
+                                error = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }//really long for loop for checking if appointments overlap
+        if (error == 0) {
+            int index = appointments.getSelectedIndex();
+            Main.appointments.get(index).setPatientName(pName.getText());
+            Main.appointments.get(index).setTime(pTime.getText());
+            Main.appointments.get(index).setDay(Integer.parseInt(pDay.getText()));
+            Main.appointments.get(index).setMonth(pMonth.getSelectedIndex());
+            Main.appointments.get(index).setYear(Integer.parseInt(pYear.getText()));
+            Main.appointments.get(index).setProcedure(procedures.getSelectedIndex());
+            Main.appointments.get(index).setDentistName(dentists.getSelectedIndex());
+            Main.appointments.get(index).setDetails(pDetails.getText());
+        }
     }//GEN-LAST:event_confirmBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

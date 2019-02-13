@@ -19,6 +19,8 @@ public class LoginWindow extends JFrame implements ActionListener{
     private JTextField passField;
     private JButton loginBtn;
     
+    public AppointmentWindow aw;
+    
     public LoginWindow() {
         
         super("Dental Office");
@@ -71,7 +73,7 @@ public class LoginWindow extends JFrame implements ActionListener{
 
                 if(passField.getText().equals("ret")) {
 
-                    new AppointmentWindow().setVisible(true);
+                    aw = new AppointmentWindow();
                     //new MakeAppointment().setVisible(true);
                 }
             }
@@ -80,7 +82,7 @@ public class LoginWindow extends JFrame implements ActionListener{
 
                 if(passField.getText().equals("ist")) {
 
-                    new AppointmentWindow().setVisible(true);
+                    aw = new AppointmentWindow();
                     //new ChangeAppointment().setVisible(true);
                 }
             }

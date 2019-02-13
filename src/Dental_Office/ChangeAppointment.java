@@ -9,6 +9,7 @@ public class ChangeAppointment extends JFrame {
 
         setTitle("Change Appointment");
         setResizable(false);
+        setVisible(true);
 
         initComponents();
 

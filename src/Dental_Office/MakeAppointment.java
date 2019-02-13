@@ -9,6 +9,7 @@ public class MakeAppointment extends JFrame {
 
         setTitle("Make Appointment");
         setResizable(false);
+        setVisible(true);
 
         initComponents();
 
@@ -202,7 +203,7 @@ public class MakeAppointment extends JFrame {
         if (error == 0) {
             if (!patientName.getText().equals("") && (Integer.parseInt(aDay.getText()) != 0 && !aDay.getText().equals("")) && (Integer.parseInt(aYear.getText()) != 0 && !aYear.getText().equals("")) && !aTime.getText().equals("")) {
                 Main.appointments.add(new Appointment(patientName.getText(), aDentist.getSelectedIndex(), aProcedure.getSelectedIndex(), aTime.getText(), Integer.parseInt(aDay.getText()), aMonth.getSelectedIndex(), Integer.parseInt(aYear.getText()), aDetails.getText()));
-                //System.out.println("Appointment: " + Main.appointments.get(0).getPName() + " " + Main.appointments.get(0).getDName()+ " " + Main.appointments.get(0).getDay() + "/" + Main.appointments.get(0).getMonth() + "/" + Main.appointments.get(0).getYear());  
+                
             }
         }
     }//GEN-LAST:event_createAppActionPerformed

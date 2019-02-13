@@ -65,6 +65,11 @@ public class MakeAppointment extends JFrame {
         jLabel6.setText("Assigned Dentist");
 
         aDentist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "John Hammerstein" }));
+        aDentist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aDentistActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Details: ");
 
@@ -203,7 +208,7 @@ public class MakeAppointment extends JFrame {
         if (error == 0) {
             if (!patientName.getText().equals("") && (Integer.parseInt(aDay.getText()) != 0 && !aDay.getText().equals("")) && (Integer.parseInt(aYear.getText()) != 0 && !aYear.getText().equals("")) && !aTime.getText().equals("")) {
                 Main.appointments.add(new Appointment(patientName.getText(), aDentist.getSelectedIndex(), aProcedure.getSelectedIndex(), aTime.getText(), Integer.parseInt(aDay.getText()), aMonth.getSelectedIndex(), Integer.parseInt(aYear.getText()), aDetails.getText()));
-                
+                Main.sw.lw.aw.appointList.updateList();
             }
         }
     }//GEN-LAST:event_createAppActionPerformed
@@ -211,29 +216,13 @@ public class MakeAppointment extends JFrame {
     private void aTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aTimeActionPerformed
+
+    private void aDentistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aDentistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aDentistActionPerformed
     private void Error_Message(int type) {
         JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
     }
-//    public static void main(String args[]) {
-//        
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(MakeAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(MakeAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(MakeAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(MakeAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField aDay;

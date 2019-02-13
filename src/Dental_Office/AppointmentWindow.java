@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 public class AppointmentWindow extends JFrame implements ActionListener {
     
     private JPanel mainPanel;
-    private AppointmentList appointList;
+    public AppointmentList appointList;
     private JButton createAppoint;
     private JButton changeAppoint;
     private JButton cancelAppoint;

@@ -24,7 +24,8 @@ public class AppointmentList extends JPanel {
         int length = Main.appointments.size();
         
         for(int i = 0; i < length; i++) {
-            add(new AppointPanel(60 * i));
+            add(new AppointPanel(Main.appointments.get(i), 57 * i));
+            repaint();
         }
     }
 }

@@ -12,6 +12,8 @@ public class Main {
     
     public static ArrayList<Dentist> dentists = new ArrayList<>(); 
     
+    public static SelectionWindow sw;
+    
     public static void main(String[] args) {
         dentists.add(new Dentist("John Hammerstein", "Masters in Dentistry", 12000, 87)); 
         usernames.add("sec");
@@ -48,7 +50,7 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new SelectionWindow().setVisible(true);
+                sw = new SelectionWindow();
             }
         });
     }

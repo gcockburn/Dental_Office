@@ -14,9 +14,11 @@ public class ChangeAppointment extends JFrame {
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+        appointments.removeAllItems();
         for (int i = 0; i < Main.appointments.size(); i++) {
             appointments.addItem(Main.appointments.get(i).getPName());
         }
+        dentists.removeAllItems();
         for (int i = 0; i < Main.dentists.size(); i++) {
             dentists.addItem(Main.dentists.get(i).getName());
         }
@@ -239,6 +241,11 @@ public class ChangeAppointment extends JFrame {
         pTime.setText("" + Main.appointments.get(index).getTime());
         procedures.setSelectedIndex(Main.appointments.get(index).getProcedure());
         pDetails.setText(Main.appointments.get(index).getDetails());
+        
+        appointments.removeAllItems();
+        for (int i = 0; i < Main.appointments.size(); i++) {
+            appointments.addItem(Main.appointments.get(i).getPName());
+        }
 
     }//GEN-LAST:event_appointmentsActionPerformed
 
@@ -259,7 +266,7 @@ public class ChangeAppointment extends JFrame {
                     if (Integer.parseInt(pDay.getText()) == (Main.appointments.get(i).getDay())) {
                         if (pTime.getText().equals(Main.appointments.get(i).getTime())) {
                             if (dentists.getSelectedIndex() == Main.appointments.get(i).getDName()) {
-                                JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
+                                JOptionPane.showMessageDialog(null, "Error: Dentist already booked", "error", 0);
                                 error = 1;
                             }
                         }

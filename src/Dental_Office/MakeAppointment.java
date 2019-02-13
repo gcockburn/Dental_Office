@@ -191,7 +191,7 @@ public class MakeAppointment extends JFrame {
                     if (Integer.parseInt(aDay.getText()) == (Main.appointments.get(i).getDay())) {
                         if (aTime.getText().equals(Main.appointments.get(i).getTime())) {
                             if (aDentist.getSelectedIndex() == Main.appointments.get(i).getDName()) {
-                                JOptionPane.showMessageDialog(null, "Incorrect username or password.", "error", 0);
+                                JOptionPane.showMessageDialog(null, "Error: Dentist already booked", "error", 0);
                                 error = 1;
                             }
                         }

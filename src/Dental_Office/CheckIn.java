@@ -152,7 +152,7 @@ public class CheckIn extends JFrame {
         //Box should contain any patients with the same last name as written in nameBox
         for (int i = 0; i < Main.appointments.size(); i++) {
             if(pName.getText().contains(Main.appointments.get(i).getPName())){
-               nameBox.addItem(Main.appointments.get(i).getPName()); 
+               nameBox.addItem(Main.appointments.get(i).getPName() + ":" + Main.appointments.get(i).getTime() ); 
             }
             
         }
@@ -162,6 +162,7 @@ public class CheckIn extends JFrame {
         //problem in that when we add items to the item box, the index's will not stay the same
         //How to call the item in main to change checkedin to true
         //do we have to crossref using selectedItem with all indexs in the appointments list?
+        
     }//GEN-LAST:event_confirmButtonActionPerformed
 
 //    public static void main(String args[]) {

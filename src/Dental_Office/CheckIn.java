@@ -2,6 +2,7 @@ package Dental_Office;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -151,12 +152,17 @@ public class CheckIn extends JFrame {
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         //it works but make it so it doesn't have to show the appointment number in later update
-
+        int error = 0; 
         for (int i = 0; i < Main.appointments.size(); i++) {
             if (pName.getText().contains(Main.appointments.get(i).getPName())) {
                 nameBox.addItem(Main.appointments.get(i).getPName() + ": " + Main.appointments.get(i).getTime() + ": " + i);
+                error = 1; 
             }
 
+        }
+        System.out.println(error);
+        if(error == 0){
+            JOptionPane.showMessageDialog(null, "Error: Appointment not found." + "\n" +  "Please re-enter name or talk to tech if problem persists", "error", 0);
         }
     }//GEN-LAST:event_enterButtonActionPerformed
 

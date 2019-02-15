@@ -56,6 +56,9 @@ public class Appointment {
     public String getDetails() {
         return details;
     }
+    public boolean getCheckedIn(){
+        return checkedIn; 
+    }
 
     public void setPatientName(String pn) {
         patientName = pn;

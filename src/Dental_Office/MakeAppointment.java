@@ -14,6 +14,7 @@ public class MakeAppointment extends JFrame {
         initComponents();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        aDentist.removeAllItems();
         for (int i = 0; i < Main.dentists.size(); i++) {
             aDentist.addItem(Main.dentists.get(i).getName());
         }

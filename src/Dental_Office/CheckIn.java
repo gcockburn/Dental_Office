@@ -1,5 +1,6 @@
 package Dental_Office;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -9,16 +10,17 @@ import javax.swing.WindowConstants;
  */
 public class CheckIn extends JFrame {
 
+
     /**
      * Creates new form Check_In
      */
     public CheckIn() {
-        
+
         setTitle("Check In");
         setResizable(false);
-        
+
         initComponents();
-        
+
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -148,13 +150,13 @@ public class CheckIn extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        //main purpose is to set combo box into having names so patient can confirm they're here
-        //Box should contain any patients with the same last name as written in nameBox
+        //it works but make it so it doesn't have to show the appointment number in later update
+
         for (int i = 0; i < Main.appointments.size(); i++) {
-            if(pName.getText().contains(Main.appointments.get(i).getPName())){
-               nameBox.addItem(Main.appointments.get(i).getPName() + ":" + Main.appointments.get(i).getTime() ); 
+            if (pName.getText().contains(Main.appointments.get(i).getPName())) {
+                nameBox.addItem(Main.appointments.get(i).getPName() + ": " + Main.appointments.get(i).getTime() + ": " + i);
             }
-            
+
         }
     }//GEN-LAST:event_enterButtonActionPerformed
 
@@ -162,7 +164,13 @@ public class CheckIn extends JFrame {
         //problem in that when we add items to the item box, the index's will not stay the same
         //How to call the item in main to change checkedin to true
         //do we have to crossref using selectedItem with all indexs in the appointments list?
-        
+        String item = (nameBox.getSelectedItem() + "");
+        String[] items = item.split(": ");
+        System.out.println(items[0] + "\n" + items[1] + "\n" + items[2]);
+        Main.appointments.get(Integer.parseInt(items[2])).checkIn();
+        System.out.println(Main.appointments.get(Integer.parseInt(items[2])).getCheckedIn());
+
+
     }//GEN-LAST:event_confirmButtonActionPerformed
 
 //    public static void main(String args[]) {

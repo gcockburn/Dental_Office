@@ -209,6 +209,7 @@ public class MakeAppointment extends JFrame {
         if (error == 0) {
             if (!patientName.getText().equals("") && (Integer.parseInt(aDay.getText()) != 0 && !aDay.getText().equals("")) && (Integer.parseInt(aYear.getText()) != 0 && !aYear.getText().equals("")) && !aTime.getText().equals("")) {
                 Main.appointments.add(new Appointment(patientName.getText(), aDentist.getSelectedIndex(), aProcedure.getSelectedIndex(), aTime.getText(), Integer.parseInt(aDay.getText()), aMonth.getSelectedIndex(), Integer.parseInt(aYear.getText()), aDetails.getText()));
+                Main.sw.lw.aw.appointList.removeAppoint();
                 Main.sw.lw.aw.appointList.updateList();
             }
         }

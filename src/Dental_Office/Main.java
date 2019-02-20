@@ -10,12 +10,13 @@ public class Main {
     public static ArrayList<String> passwords = new ArrayList<>();
     public static ArrayList<Appointment> appointments = new ArrayList<>();
     
-    public static ArrayList<Dentist> dentists = new ArrayList<>(); 
+    public static ArrayList<Employee> employees = new ArrayList<>(); 
     
     public static SelectionWindow sw;
     
     public static void main(String[] args) {
-        dentists.add(new Dentist("John Hammerstein", "Masters in Dentistry", 12000, 87)); 
+        employees.add(new Dentist("John Hammerstein", "MD", 12000, 87));
+        employees.add(new Secretary("Jane Doe", 4, 7000));
         usernames.add("sec");
         passwords.add("ret");
         usernames.add("dent");

@@ -6,14 +6,15 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class AppointmentList extends JPanel implements ActionListener {
+public class EmployeeList extends JPanel implements ActionListener {
     
-    public ArrayList<AppointPanel> appointItem = new ArrayList<AppointPanel>();
+    private JLabel listLbl;
+    public ArrayList<EmpPanel> empItem = new ArrayList<EmpPanel>();
     
-    
-    public AppointmentList() {
+    public EmployeeList() {
         
         setLayout(null);
         setBounds(0, 0, 250, 500);
@@ -23,21 +24,21 @@ public class AppointmentList extends JPanel implements ActionListener {
     
     public void updateList() {
         
-        int length = Main.appointments.size();
+        int length = Main.employees.size();
         
         for(int i = 0; i < length; i++) {
-            appointItem.add(new AppointPanel(Main.appointments.get(i), 57 * i));
-            appointItem.get(i).cancelBtn.addActionListener(this);
-            add(appointItem.get(i));
+            empItem.add(new EmpPanel(Main.employees.get(i), 57 * i));
+            empItem.get(i).fireBtn.addActionListener(this);
+            add(empItem.get(i));
             repaint();
         }
     }
     
-    public void removeAppoint() {
+    public void refreshEmps() {
         
         removeAll();
         
-        appointItem.clear();
+        empItem.clear();
         
         repaint();
         
@@ -49,11 +50,11 @@ public class AppointmentList extends JPanel implements ActionListener {
         
         JButton source = (JButton)ae.getSource();
         
-        for(int i = 0; i < appointItem.size(); i++) {
+        for(int i = 0; i < empItem.size(); i++) {
             
-            if(source == appointItem.get(i).cancelBtn) {
-                Main.appointments.remove(i);
-                removeAppoint();
+            if(source == empItem.get(i).fireBtn) {
+                Main.employees.remove(i);
+                refreshEmps();
             }
         }
     }

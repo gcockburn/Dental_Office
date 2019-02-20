@@ -20,8 +20,10 @@ public class ChangeAppointment extends JFrame {
             appointments.addItem(Main.appointments.get(i).getPName());
         }
         dentists.removeAllItems();
-        for (int i = 0; i < Main.dentists.size(); i++) {
-            dentists.addItem(Main.dentists.get(i).getName());
+        for (int i = 0; i < Main.employees.size(); i++) {
+            if(Main.employees.get(i) instanceof Dentist) {
+                dentists.addItem(Main.employees.get(i).getName());
+            }
         }
     }
 

@@ -1,28 +1,31 @@
 package Dental_Office;
 
-public class Dentist {
-    private String name;
+public class Dentist extends Employee{
+    
     private String Degrees;
-    private double salary;
     private double satisfaction; 
     
-    public Dentist(String n, String D, double sal, double sat) {
-        name = n;
-        Degrees = D;
-        salary = sal;
+    public Dentist(String n, String d, double sal, double sat) {
+        
+        super(n, "Dentist", sal);
+        
+        Degrees = d;
         satisfaction = sat; 
     }
     
-    public String getName(){
-        return name; 
-    }
     public String getDegrees(){
         return Degrees; 
     }
-    public double getSalary(){
-        return salary;
-    }
+    
     public double getSatisfaction(){
         return satisfaction; 
+    }
+
+    public void setDegrees(String Degrees) {
+        this.Degrees = Degrees;
+    }
+
+    public void setSatisfaction(double satisfaction) {
+        this.satisfaction = satisfaction;
     }
 }

@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 
 public class AppointPanel extends JPanel {
     
-    private int y;
     private JLabel nameLbl;
     private JLabel dentLbl;
     private JLabel timeLbl;
@@ -26,7 +25,7 @@ public class AppointPanel extends JPanel {
         nameLbl = new JLabel(a.getPName());
         nameLbl.setBounds(10, 10, 100, 20);
         add(nameLbl);
-        dentLbl = new JLabel("Dr. " + Main.dentists.get(a.getDName()).getName() + "");
+        dentLbl = new JLabel("Dr. " + Main.employees.get(a.getDName()).getName() + "");
         dentLbl.setBounds(10, 30, 150, 20);
         add(dentLbl);
         timeLbl = new JLabel(a.getTime());
@@ -39,6 +38,5 @@ public class AppointPanel extends JPanel {
         cancelBtn = new JButton("Cancel");
         cancelBtn.setBounds(175, 10, 68, 20);
         add(cancelBtn);
-        
     }
 }

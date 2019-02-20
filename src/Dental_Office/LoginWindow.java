@@ -20,6 +20,7 @@ public class LoginWindow extends JFrame implements ActionListener{
     private JButton loginBtn;
     
     public AppointmentWindow aw;
+    public AdminWindow adw;
     
     public LoginWindow() {
         
@@ -74,7 +75,6 @@ public class LoginWindow extends JFrame implements ActionListener{
                 if(passField.getText().equals("ret")) {
 
                     aw = new AppointmentWindow();
-                    //new MakeAppointment().setVisible(true);
                 }
             }
 
@@ -83,7 +83,14 @@ public class LoginWindow extends JFrame implements ActionListener{
                 if(passField.getText().equals("ist")) {
 
                     aw = new AppointmentWindow();
-                    //new ChangeAppointment().setVisible(true);
+                }
+            }
+            
+            else if(userField.getText().equalsIgnoreCase("admin")) {
+
+                if(passField.getText().equals("admin")) {
+
+                    adw = new AdminWindow();
                 }
             }
         }

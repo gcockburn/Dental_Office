@@ -12,7 +12,6 @@ public class AppointmentWindow extends JFrame implements ActionListener {
     public AppointmentList appointList;
     private JButton createAppoint;
     private JButton changeAppoint;
-    private JButton cancelAppoint;
     
     public MakeAppointment ma;
     public ChangeAppointment ca;
@@ -44,13 +43,8 @@ public class AppointmentWindow extends JFrame implements ActionListener {
         changeAppoint.setBounds(160, 530, 150, 30);
         mainPanel.add(changeAppoint);
         
-        cancelAppoint = new JButton("Cancel Appointment");
-        cancelAppoint.setBounds(320, 530, 150, 30);
-        mainPanel.add(cancelAppoint);
-        
         createAppoint.addActionListener(this);
         changeAppoint.addActionListener(this);
-        cancelAppoint.addActionListener(this);
     }
 
     @Override
@@ -66,10 +60,6 @@ public class AppointmentWindow extends JFrame implements ActionListener {
         else if(source == changeAppoint) {
             
             ca = new ChangeAppointment();
-        }
-        
-        else if(source == cancelAppoint) {
-            
         }
     }
 }

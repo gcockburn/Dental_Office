@@ -27,7 +27,7 @@ public class LoginWindow extends JFrame implements ActionListener{
         setSize(350, 300);
         setVisible(true);
         setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(null);
         
         mainPanel = new JPanel();

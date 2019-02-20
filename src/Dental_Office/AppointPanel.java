@@ -15,6 +15,7 @@ public class AppointPanel extends JPanel {
     private JLabel dateLbl;
     private JLabel procedLbl;
     public JButton cancelBtn;
+    private JLabel checkedLbl;
     
     public AppointPanel(Appointment a, int y) {
         
@@ -34,8 +35,10 @@ public class AppointPanel extends JPanel {
         dateLbl = new JLabel(a.getDay() + "/" + (a.getMonth() + 1) + "/" + a.getYear());
         dateLbl.setBounds(150, 30, 100, 20);
         add(dateLbl);
+        
         cancelBtn = new JButton("Cancel");
         cancelBtn.setBounds(175, 10, 68, 20);
         add(cancelBtn);
+        
     }
 }

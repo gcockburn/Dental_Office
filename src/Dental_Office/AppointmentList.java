@@ -31,7 +31,6 @@ public class AppointmentList extends JPanel implements ActionListener {
             appointItem.add(new AppointPanel(Main.appointments.get(i), 57 * i));
             appointItem.get(i).cancelBtn.addActionListener(this);
             add(appointItem.get(i));
-//            add(new AppointPanel(Main.appointments.get(i), 57 * i));
             repaint();
         }
     }

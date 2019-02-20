@@ -176,7 +176,6 @@ public class CheckIn extends JFrame {
         Main.appointments.get(Integer.parseInt(items[2])).checkIn();
         System.out.println(Main.appointments.get(Integer.parseInt(items[2])).getCheckedIn());
 
-
     }//GEN-LAST:event_confirmButtonActionPerformed
 
 //    public static void main(String args[]) {

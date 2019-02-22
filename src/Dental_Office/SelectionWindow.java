@@ -5,6 +5,8 @@
  */
 package Dental_Office;
 
+import javax.swing.JFrame;
+
 public class SelectionWindow extends javax.swing.JFrame {
 
     public LoginWindow lw;
@@ -15,6 +17,7 @@ public class SelectionWindow extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

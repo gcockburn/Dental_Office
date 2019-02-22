@@ -10,7 +10,7 @@ import javax.swing.WindowConstants;
  * @author g.cockburn
  */
 public class CheckIn extends JFrame {
-
+    public static int appointmentNum = 0;
 
     /**
      * Creates new form Check_In
@@ -23,6 +23,7 @@ public class CheckIn extends JFrame {
         initComponents();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
     }
 
     /**
@@ -155,8 +156,9 @@ public class CheckIn extends JFrame {
         int error = 0; 
         for (int i = 0; i < Main.appointments.size(); i++) {
             if (pName.getText().contains(Main.appointments.get(i).getPName())) {
-                nameBox.addItem(Main.appointments.get(i).getPName() + ": " + Main.appointments.get(i).getTime() + ": " + i);
+                nameBox.addItem(Main.appointments.get(i).getPName() + ": " + Main.appointments.get(i).getTime());
                 error = 1; 
+                appointmentNum = i; 
             }
 
         }
@@ -172,9 +174,10 @@ public class CheckIn extends JFrame {
         //do we have to crossref using selectedItem with all indexs in the appointments list?
         String item = (nameBox.getSelectedItem() + "");
         String[] items = item.split(": ");
-        System.out.println(items[0] + "\n" + items[1] + "\n" + items[2]);
-        Main.appointments.get(Integer.parseInt(items[2])).checkIn();
-        System.out.println(Main.appointments.get(Integer.parseInt(items[2])).getCheckedIn());
+        System.out.println(items[0] + "\n" + items[1]);
+        Main.appointments.get(appointmentNum).checkIn();
+        System.out.println(Main.appointments.get(appointmentNum).getCheckedIn());
+        new Receipt().setVisible(true);
 
     }//GEN-LAST:event_confirmButtonActionPerformed
 

@@ -63,7 +63,7 @@ public class MakeAppointment extends JFrame {
 
         jLabel5.setText("Procedure to be performed:");
 
-        aProcedure.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tooth Cleaning", "Cavity Removal", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation" }));
+        aProcedure.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tooth Cleaning", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation" }));
 
         jLabel6.setText("Assigned Dentist");
 

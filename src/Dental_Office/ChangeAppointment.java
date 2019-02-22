@@ -83,7 +83,7 @@ public class ChangeAppointment extends JFrame {
 
         jLabel5.setText("Year:");
 
-        procedures.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tooth Cleaning", "Cavity Removal", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation" }));
+        procedures.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tooth Cleaning", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation" }));
         procedures.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 proceduresActionPerformed(evt);

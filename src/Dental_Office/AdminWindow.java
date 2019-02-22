@@ -13,6 +13,7 @@ public class AdminWindow extends JFrame implements ActionListener {
     private JPanel mainPanel;
     public EmployeeList empList;
     private JButton hireEmpBtn;
+    private HireFrame hf;
  
     public AdminWindow() {
     
@@ -46,7 +47,7 @@ public class AdminWindow extends JFrame implements ActionListener {
         JButton source = (JButton)ae.getSource();
         
         if(source == hireEmpBtn) {
-            empList.updateList(); //
+            hf = new HireFrame();
         }
     }
 }

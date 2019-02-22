@@ -15,7 +15,7 @@ public class Main {
     public static SelectionWindow sw;
     
     public static void main(String[] args) {
-        employees.add(new Dentist("John Hammerstein", "MD", 12000, 87));
+        employees.add(new Dentist("John Hammerstein", "MD", 12000));
         employees.add(new Secretary("Jane Doe", 4, 7000));
         usernames.add("sec");
         passwords.add("ret");

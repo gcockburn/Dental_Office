@@ -3,14 +3,14 @@ package Dental_Office;
 public class Dentist extends Employee{
     
     private String Degrees;
-    private double satisfaction; 
+    private double satisfaction;
     
-    public Dentist(String n, String d, double sal, double sat) {
+    public Dentist(String n, String d, double sal) {
         
         super(n, "Dentist", sal);
         
         Degrees = d;
-        satisfaction = sat; 
+        satisfaction = 100; 
     }
     
     public String getDegrees(){

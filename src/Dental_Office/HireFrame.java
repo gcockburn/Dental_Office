@@ -72,9 +72,9 @@ public class HireFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        JButton source = (JButton)ae.getSource();
+        //JButton source = (JButton)ae.getSource();
         
-        if(source == hireBtn) {
+        if(ae.getSource() == hireBtn) {
             if(posComBox.getSelectedIndex() == 1) {
                 Main.employees.add(new Secretary(nameFld.getText(), Integer.parseInt(optionFld.getText()), Integer.parseInt(salaryFld.getText())));
             }

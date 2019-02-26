@@ -5,9 +5,13 @@ package Dental_Office;
  * @author g.cockburn
  */
 public class SurveyWindow extends javax.swing.JFrame {
+
     /**
      * Creates new form SurveyWindow
      */
+    //Set to draw from long term storage later
+    public static int participants = 0;
+
     public SurveyWindow() {
         initComponents();
     }
@@ -150,13 +154,15 @@ public class SurveyWindow extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
 //Currently this method only updates the satisfaction percentage of the dentist
 //need to add long term storage keeping track of other survey results (to show to admin)
-        String dent = Main.employees.get(Main.appointments.get(CheckIn.appointmentNum).getDName()) + "";
-        System.out.println("Test 1");
-        for(Employee currentEmployee : Main.employees){
-            if(dent.equals(currentEmployee.getName())){
-                double newsatis = (((dentBox.getSelectedIndex() + 1) *10) * ((Dentist)currentEmployee).getSatisfaction()) /2;
-                ((Dentist)currentEmployee).setSatisfaction(newsatis);
-                System.out.println("Test 2: " + newsatis);
+//survey admin results will show how many participated as well as who would reccomend/general satisfaction levels
+        participants += 1;
+        String dent = Main.employees.get(Main.appointments.get(CheckIn.appointmentNum).getDName()).getName() + "";
+        
+        
+        for (Employee currentEmployee : Main.employees) {
+            if (dent.equals(currentEmployee.getName())) {
+                double newsatis = (((dentBox.getSelectedIndex() + 1) * 10) + ((Dentist) currentEmployee).getSatisfaction()) / 2;
+                ((Dentist) currentEmployee).setSatisfaction(newsatis);
             }
         }
     }//GEN-LAST:event_submitButtonActionPerformed

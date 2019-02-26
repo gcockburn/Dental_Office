@@ -1,19 +1,23 @@
 package Dental_Office;
 
-import javax.swing.JOptionPane;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Receipt extends javax.swing.JFrame {
 
     public Receipt() {
         initComponents();
-        
-        int totalcost = 0; 
-        String[] procedures = {"Tooth Cleaning", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup" , "Braces Removal", "Braces Implementation"};
-        int[] costs = {125, 150, 1500, 500, 250, 200, 5500}; 
-        
+
+
+
+
+        int totalcost = 0;
+        String[] procedures = {"Tooth Cleaning", "Filling", "Crowning", "Wisdom Teeth Removal", "Braces Checkup", "Braces Removal", "Braces Implementation"};
+        int[] costs = {125, 150, 1500, 500, 250, 200, 5500};
+
         receipt.setText("Breakdown of Costs: ");
         receipt.append("- " + procedures[Main.appointments.get(CheckIn.appointmentNum).getProcedure()] + ": " + costs[Main.appointments.get(CheckIn.appointmentNum).getProcedure()] + "$");
-        totalcost+= costs[Main.appointments.get(CheckIn.appointmentNum).getProcedure()]; 
+        totalcost += costs[Main.appointments.get(CheckIn.appointmentNum).getProcedure()];
         receipt.append("\n" + "\n" + "Total Cost: " + totalcost + "$");
     }
 
@@ -28,6 +32,7 @@ public class Receipt extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         payButton.setText("PAY");
         payButton.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +95,7 @@ public class Receipt extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void payButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payButtonActionPerformed
-
+        new SurveyWindow().setVisible(true);
     }//GEN-LAST:event_payButtonActionPerformed
 
     /**

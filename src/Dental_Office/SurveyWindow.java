@@ -5,7 +5,6 @@ package Dental_Office;
  * @author g.cockburn
  */
 public class SurveyWindow extends javax.swing.JFrame {
-
     /**
      * Creates new form SurveyWindow
      */

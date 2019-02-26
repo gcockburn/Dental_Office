@@ -1,5 +1,10 @@
 package Dental_Office;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -56,4 +61,62 @@ public class Main {
             }
         });
     }
+//        public static void loadFile(String filename, ArrayList tempList) {
+//
+//        String temp = "";
+//
+//        try {
+//
+//            BufferedReader file = new BufferedReader(new FileReader(filename));
+//            while (file.ready()) {
+//
+//                temp = file.readLine();
+//                String tempArray[] = temp.split(",");
+//
+//                //the next line is customized for whatever class you are creating.
+//                tempList.add(new FirstEdition(tempArray[0], tempArray[1],
+//                        Integer.parseInt(tempArray[2]), Integer.parseInt(tempArray[3]),
+//                        Integer.parseInt(tempArray[4])));
+//
+//            }//End while
+//
+//        } catch (IOException e) {
+//
+//            System.out.println(e);
+//
+//        }//End catch
+//
+//    }//End loadFile
+//
+//    //You will need to change the type of the arraylist here   ↓
+//    public static void saveFile(String filename, ArrayList<Employee> tempList) {
+//
+//        try {
+//
+//            PrintWriter file = new PrintWriter(new FileWriter(filename));
+//
+//            for (int i = 0; i < tempList.size(); i++) {
+//
+//                //the next lines are customized for whatever data you are getting.
+//                String toSave = "";
+//                toSave = tempList.get(i).name;
+//                toSave += "," + tempList.get(i).wheelType;
+//                toSave += "," + tempList.get(i).toyNum;
+//                toSave += "," + tempList.get(i).numIn2003;
+//                toSave += "," + tempList.get(i).seriesNum;
+//                toSave += "," + tempList.get(i).retailPrice;
+//
+//                file.println(toSave);
+//
+//            }//End for loop
+//
+//            file.close();
+//
+//        } catch (IOException ex) {
+//
+//            System.out.println(ex.toString());
+//
+//        }//End catch
+//
+//    }//End saveFile
 }

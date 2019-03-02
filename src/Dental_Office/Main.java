@@ -27,6 +27,8 @@ public class Main {
         passwords.add("ret");
         usernames.add("dent");
         passwords.add("ist");
+        usernames.add("admin");
+        passwords.add("admin");
         
 
         /* Set the Nimbus look and feel */

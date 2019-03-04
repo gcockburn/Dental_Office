@@ -4,12 +4,14 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class ItemPanel extends JPanel {
     
     private JLabel itemLbl;
     private JLabel stockLbl;
     private JLabel priceLbl;
+    private JTextField orderNumFld;
     
     public ItemPanel(String il, int sl, double pl, int y) {
         
@@ -28,5 +30,14 @@ public class ItemPanel extends JPanel {
         priceLbl = new JLabel("Price: $" + pl);
         priceLbl.setBounds(250, 15, 100, 20);
         add(priceLbl);
+        
+        orderNumFld = new JTextField();
+        orderNumFld.setBounds(350, 10, 30, 30);
+        add(orderNumFld);
+    }
+    
+    public void clearOrder() {
+        
+        orderNumFld.setText("");
     }
 }

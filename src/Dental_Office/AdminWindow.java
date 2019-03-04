@@ -36,7 +36,7 @@ public class AdminWindow extends JFrame implements ActionListener {
         mainPanel.add(empList);
         
         ep = new EquipPanel();
-        ep.setBounds(50, 30, 400, 400);
+        ep.setBounds(50, 30, 400, 379);
         mainPanel.add(ep);
         
         hireEmpBtn = new JButton("Hire Employee");

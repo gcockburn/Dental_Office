@@ -30,6 +30,7 @@ public class Main {
     
     public static void main(String[] args) {
         loadAppointFile("Current Appointment List.txt", appointments);
+        loadEmployeeFile("Employee List.txt", employees);
         employees.add(new Dentist("John Hammerstein", "MD", 12000));
         employees.add(new Secretary("Jane Doe", 4, 7000));
         employees.add(new Dentist("Stacy Lue", "Phd", 15000));

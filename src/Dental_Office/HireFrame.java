@@ -84,7 +84,7 @@ public class HireFrame extends JFrame implements ActionListener {
             
             Main.sw.lw.adw.empList.refreshEmps();
             this.dispose();
-            Main.saveEmployeeFile("Employee List", Main.employees);
+            Main.saveEmployeeFile("Employee List.txt", Main.employees);
         }
         
         if(posComBox.getSelectedIndex() == 1) {

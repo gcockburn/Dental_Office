@@ -31,7 +31,7 @@ public class EmployeeList extends JPanel implements ActionListener {
             empItem.get(i).fireBtn.addActionListener(this);
             add(empItem.get(i));
             repaint();
-            Main.saveEmployeeFile("Employee List", Main.employees);
+            Main.saveEmployeeFile("Employee List.txt", Main.employees);
         }
     }
     

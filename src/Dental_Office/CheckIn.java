@@ -174,12 +174,12 @@ public class CheckIn extends JFrame {
         //do we have to crossref using selectedItem with all indexs in the appointments list?
         String item = (nameBox.getSelectedItem() + "");
         String[] items = item.split(": ");
-        System.out.println(items[0] + "\n" + items[1]);
         Main.appointments.get(appointmentNum).checkIn();
         new Receipt().setVisible(true);
-        Main.appointments.remove(appointmentNum);
         Main.finishedAppointments.add(Main.appointments.get(appointmentNum));
-        Main.saveAppointFile("Current Appointment List", Main.appointments);
+        Main.appointments.remove(appointmentNum);
+        Main.saveAppointFile("Current Appointment List.txt", Main.appointments);
+        Main.saveAppointFile("Completed Appointment List.txt", Main.finishedAppointments);
 
     }//GEN-LAST:event_confirmButtonActionPerformed
 

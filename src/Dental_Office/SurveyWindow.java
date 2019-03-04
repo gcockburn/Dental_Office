@@ -163,6 +163,7 @@ public class SurveyWindow extends javax.swing.JFrame {
             if (dent.equals(currentEmployee.getName())) {
                 double newsatis = (((dentBox.getSelectedIndex() + 1) * 10) + ((Dentist) currentEmployee).getSatisfaction()) / 2;
                 ((Dentist) currentEmployee).setSatisfaction(newsatis);
+                Main.saveEmployeeFile("Employee List", Main.employees);
             }
         }
     }//GEN-LAST:event_submitButtonActionPerformed

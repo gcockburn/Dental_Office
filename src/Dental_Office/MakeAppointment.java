@@ -213,7 +213,7 @@ public class MakeAppointment extends JFrame {
                 Main.appointments.add(new Appointment(patientName.getText(), aDentist.getSelectedIndex(), aProcedure.getSelectedIndex(), aTime.getText(), Integer.parseInt(aDay.getText()), aMonth.getSelectedIndex(), Integer.parseInt(aYear.getText()), aDetails.getText()));
                 Main.sw.lw.aw.appointList.removeAppoint();
                 Main.sw.lw.aw.appointList.updateList();
-                Main.saveAppointFile("Appointment List", Main.appointments);
+                Main.saveAppointFile("Current Appointment List", Main.appointments);
             }
         }
     }//GEN-LAST:event_createAppActionPerformed

@@ -13,7 +13,8 @@ public class Main {
     
     public static ArrayList<String> usernames = new ArrayList<>();
     public static ArrayList<String> passwords = new ArrayList<>();
-    public static ArrayList<Appointment> appointments = new ArrayList<>(); 
+    public static ArrayList<Appointment> appointments = new ArrayList<>();
+    public static ArrayList<Appointment> finishedAppointments = new ArrayList<>(); 
     
     
     public static ArrayList<Employee> employees = new ArrayList<>(); 
@@ -21,7 +22,7 @@ public class Main {
     public static SelectionWindow sw;
     
     public static void main(String[] args) {
-        loadAppointFile("Appointment List", appointments);
+        loadAppointFile("Current Appointment List", appointments);
         employees.add(new Dentist("John Hammerstein", "MD", 12000));
         employees.add(new Secretary("Jane Doe", 4, 7000));
         employees.add(new Dentist("Stacy Lue", "Phd", 15000));

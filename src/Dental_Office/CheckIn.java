@@ -176,8 +176,10 @@ public class CheckIn extends JFrame {
         String[] items = item.split(": ");
         System.out.println(items[0] + "\n" + items[1]);
         Main.appointments.get(appointmentNum).checkIn();
-        System.out.println(Main.appointments.get(appointmentNum).getCheckedIn());
         new Receipt().setVisible(true);
+        Main.appointments.remove(appointmentNum);
+        Main.finishedAppointments.add(Main.appointments.get(appointmentNum));
+        Main.saveAppointFile("Current Appointment List", Main.appointments);
 
     }//GEN-LAST:event_confirmButtonActionPerformed
 

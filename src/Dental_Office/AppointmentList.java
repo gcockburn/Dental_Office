@@ -30,7 +30,7 @@ public class AppointmentList extends JPanel implements ActionListener {
             appointItem.get(i).cancelBtn.addActionListener(this);
             add(appointItem.get(i));
             repaint();
-            Main.saveAppointFile("Appointment List", Main.appointments);
+            Main.saveAppointFile("Current Appointment List", Main.appointments);
         }
     }
     

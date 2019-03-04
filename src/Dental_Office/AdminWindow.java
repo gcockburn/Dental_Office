@@ -15,6 +15,8 @@ public class AdminWindow extends JFrame implements ActionListener {
     private JButton hireEmpBtn;
     private HireFrame hf;
     private EquipPanel ep;
+    private JButton orderBtn;
+    private JButton cancelOrderBtn;
  
     public AdminWindow() {
     
@@ -39,11 +41,21 @@ public class AdminWindow extends JFrame implements ActionListener {
         ep.setBounds(50, 30, 400, 379);
         mainPanel.add(ep);
         
+        orderBtn = new JButton("Order");
+        orderBtn.setBounds(50, 415, 100, 30);
+        mainPanel.add(orderBtn);
+        
+        cancelOrderBtn = new JButton("Cancel Order");
+        cancelOrderBtn.setBounds(160, 415, 120, 30);
+        mainPanel.add(cancelOrderBtn);
+        
         hireEmpBtn = new JButton("Hire Employee");
         hireEmpBtn.setBounds(10, 530, 140, 30);
         mainPanel.add(hireEmpBtn);
         
         hireEmpBtn.addActionListener(this);
+        orderBtn.addActionListener(this);
+        cancelOrderBtn.addActionListener(this);
     }
 
     @Override
@@ -53,6 +65,15 @@ public class AdminWindow extends JFrame implements ActionListener {
         
         if(source == hireEmpBtn) {
             hf = new HireFrame();
+        }
+        else if(source == orderBtn) {
+            
+        }
+        else if(source == cancelOrderBtn) {
+            
+            for(int i =0; i < 8; i++) {
+                ep.ips.get(i).clearOrder();
+            }
         }
     }
 }

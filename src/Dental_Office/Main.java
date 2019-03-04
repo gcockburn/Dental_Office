@@ -14,7 +14,14 @@ public class Main {
     public static ArrayList<String> usernames = new ArrayList<>();
     public static ArrayList<String> passwords = new ArrayList<>();
     public static ArrayList<Appointment> appointments = new ArrayList<>();
+<<<<<<< HEAD
     public static ArrayList<Appointment> finishedAppointments = new ArrayList<>(); 
+=======
+    public static String[] inventory = {"Surgical Masks", "Nitrile Gloves", "Molding Clay", "Dental Wire", "Dental Elastics", "Cotton Balls", "Floss", "Filling Metal"};
+    public static int[] stocks = {};
+    public static double[] prices = {};
+    public static double clinicMoney;
+>>>>>>> 0254897013b84571417fe9a9ef0c8477c964b25b
     
     
     public static ArrayList<Employee> employees = new ArrayList<>(); 

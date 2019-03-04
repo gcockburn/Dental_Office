@@ -287,6 +287,7 @@ public class ChangeAppointment extends JFrame {
             Main.appointments.get(index).setProcedure(procedures.getSelectedIndex());
             Main.appointments.get(index).setDentistName(dentists.getSelectedIndex());
             Main.appointments.get(index).setDetails(pDetails.getText());
+            Main.saveAppointFile("Appointment List", Main.appointments);
         }
     }//GEN-LAST:event_confirmBtnActionPerformed
 

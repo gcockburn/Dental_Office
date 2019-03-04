@@ -61,62 +61,119 @@ public class Main {
             }
         });
     }
-//        public static void loadFile(String filename, ArrayList tempList) {
+    
+        public static void loadAppointFile(String filename, ArrayList<Appointment> tempList) {
+
+        String temp = "";
+
+        try {
+
+            BufferedReader file = new BufferedReader(new FileReader(filename));
+            while (file.ready()) {
+
+                temp = file.readLine();
+                String tempArray[] = temp.split(",");
+
+                //the next line is customized for whatever class you are creating.
+                tempList.add(new Appointment(tempArray[0], Integer.parseInt(tempArray[1]), Integer.parseInt(tempArray[2]), tempArray[3], Integer.parseInt(tempArray[4]), Integer.parseInt(tempArray[5]), Integer.parseInt(tempArray[6]), tempArray[7]));
+
+            }//End while
+
+        } catch (IOException e) {
+
+            System.out.println(e);
+
+        }//End catch
+
+    }//End loadFile
 //
-//        String temp = "";
-//
-//        try {
-//
-//            BufferedReader file = new BufferedReader(new FileReader(filename));
-//            while (file.ready()) {
-//
-//                temp = file.readLine();
-//                String tempArray[] = temp.split(",");
-//
-//                //the next line is customized for whatever class you are creating.
-//                tempList.add(new FirstEdition(tempArray[0], tempArray[1],
-//                        Integer.parseInt(tempArray[2]), Integer.parseInt(tempArray[3]),
-//                        Integer.parseInt(tempArray[4])));
-//
-//            }//End while
-//
-//        } catch (IOException e) {
-//
-//            System.out.println(e);
-//
-//        }//End catch
-//
-//    }//End loadFile
-//
+        
 //    //You will need to change the type of the arraylist here   ↓
-//    public static void saveFile(String filename, ArrayList<Employee> tempList) {
+    public static void saveAppointFile(String filename, ArrayList<Appointment> tempList) {
+
+        try {
+
+            PrintWriter file = new PrintWriter(new FileWriter(filename));
+
+            for (int i = 0; i < tempList.size(); i++) {
+
+                //the next lines are customized for whatever data you are getting.
+                String toSave = "";
+                toSave = tempList.get(i).getPName();
+                toSave += "," + tempList.get(i).getDName();
+                toSave += "," + tempList.get(i).getProcedure();
+                toSave += "," + tempList.get(i).getTime();
+                toSave += "," + tempList.get(i).getDay();
+                toSave += "," + tempList.get(i).getMonth();
+                toSave += "," + tempList.get(i).getYear();
+                toSave += "," + tempList.get(i).getDetails();
+
+                file.println(toSave);
+
+            }//End for loop
+
+            file.close();
+
+        } catch (IOException ex) {
+
+            System.out.println(ex.toString());
+
+        }//End catch
+
+    }//End saveFile
+    
+            public static void loadEmployeeFile(String filename, ArrayList<Employee> tempList) {
+
+        String temp = "";
+
+        try {
+
+            BufferedReader file = new BufferedReader(new FileReader(filename));
+            while (file.ready()) {
+
+                temp = file.readLine();
+                String tempArray[] = temp.split(",");
+
+                //the next line is customized for whatever class you are creating.
+                tempList.add(new Employee(tempArray[0], tempArray[1], Double.parseDouble(tempArray[2])));
+
+            }//End while
+
+        } catch (IOException e) {
+
+            System.out.println(e);
+
+        }//End catch
+
+    }//End loadFile
 //
-//        try {
-//
-//            PrintWriter file = new PrintWriter(new FileWriter(filename));
-//
-//            for (int i = 0; i < tempList.size(); i++) {
-//
-//                //the next lines are customized for whatever data you are getting.
-//                String toSave = "";
-//                toSave = tempList.get(i).name;
-//                toSave += "," + tempList.get(i).wheelType;
-//                toSave += "," + tempList.get(i).toyNum;
-//                toSave += "," + tempList.get(i).numIn2003;
-//                toSave += "," + tempList.get(i).seriesNum;
-//                toSave += "," + tempList.get(i).retailPrice;
-//
-//                file.println(toSave);
-//
-//            }//End for loop
-//
-//            file.close();
-//
-//        } catch (IOException ex) {
-//
-//            System.out.println(ex.toString());
-//
-//        }//End catch
-//
-//    }//End saveFile
+        
+//    //You will need to change the type of the arraylist here   ↓
+    public static void saveEmployeeFile(String filename, ArrayList<Employee> tempList) {
+
+        try {
+
+            PrintWriter file = new PrintWriter(new FileWriter(filename));
+
+            for (int i = 0; i < tempList.size(); i++) {
+
+                //the next lines are customized for whatever data you are getting.
+                String toSave = "";
+                toSave = tempList.get(i).getName();
+                toSave += "," + tempList.get(i).getPosition();
+                toSave += "," + tempList.get(i).getSalary();
+
+                file.println(toSave);
+
+            }//End for loop
+
+            file.close();
+
+        } catch (IOException ex) {
+
+            System.out.println(ex.toString());
+
+        }//End catch
+
+    }//End saveFile
 }

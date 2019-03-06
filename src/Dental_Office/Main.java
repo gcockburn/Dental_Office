@@ -20,7 +20,7 @@ public class Main {
 
 
     public static String[] inventory = {"Surgical Masks", "Nitrile Gloves", "Molding Clay", "Dental Wire", "Dental Elastics", "Cotton Balls", "Floss", "Filling Metal"};
-    public static int[] stocks = {};
+    public static int[] stocks = loadStock("stock.txt");
     public static double[] prices = {24, 28, 60, 75, 15, 15, 20, 135};
     public static double clinicMoney;
     
@@ -31,9 +31,6 @@ public class Main {
     public static void main(String[] args) {
         loadAppointFile("Current Appointment List.txt", appointments);
         loadEmployeeFile("Employee List.txt", employees);
-        employees.add(new Dentist("John Hammerstein", "MD", 12000));
-        employees.add(new Secretary("Jane Doe", 4, 7000));
-        employees.add(new Dentist("Stacy Lue", "Phd", 15000));
         usernames.add("sec");
         passwords.add("ret");
         usernames.add("dent");
@@ -75,7 +72,29 @@ public class Main {
         });
     }
     
-        public static void loadAppointFile(String filename, ArrayList<Appointment> tempList) {
+    public static int[] loadStock(String filename) {
+        
+        int[] tempStock = new int[8];
+        
+        try {
+
+            BufferedReader file = new BufferedReader(new FileReader(filename));
+            
+            while (file.ready()) {
+                
+                int i = 0;
+                tempStock[i] = Integer.parseInt(file.readLine());
+            }
+        }
+        catch (IOException e) {
+
+            System.out.println(e);
+        }
+        
+        return tempStock;
+    }
+    
+    public static void loadAppointFile(String filename, ArrayList<Appointment> tempList) {
 
         String temp = "";
 

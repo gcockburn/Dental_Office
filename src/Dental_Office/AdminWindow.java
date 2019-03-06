@@ -17,6 +17,7 @@ public class AdminWindow extends JFrame implements ActionListener {
     private EquipPanel ep;
     private JButton orderBtn;
     private JButton cancelOrderBtn;
+    private JLabel moneyLbl;
  
     public AdminWindow() {
     
@@ -53,6 +54,11 @@ public class AdminWindow extends JFrame implements ActionListener {
         hireEmpBtn.setBounds(10, 530, 140, 30);
         mainPanel.add(hireEmpBtn);
         
+        moneyLbl = new JLabel();
+        moneyLbl.setText("$" + Main.clinicMoney);
+        moneyLbl.setBounds(300, 415, 100, 30);
+        mainPanel.add(moneyLbl);
+        
         hireEmpBtn.addActionListener(this);
         orderBtn.addActionListener(this);
         cancelOrderBtn.addActionListener(this);
@@ -72,6 +78,21 @@ public class AdminWindow extends JFrame implements ActionListener {
         else if(source == cancelOrderBtn) {
             
             for(int i =0; i < 8; i++) {
+                ep.ips.get(i).clearOrder();
+            }
+        }
+        else if(source == orderBtn) {
+            
+            double cost = 0;
+            
+            for(int i = 0; i < ep.ips.size(); i++) {
+                
+                cost += (ep.ips.get(i).getPrice() * ep.ips.get(i).getNumToOrder());
+            }
+            
+            Main.clinicMoney -= cost;
+            
+            for(int i =0; i < 8; i++) { //fix
                 ep.ips.get(i).clearOrder();
             }
         }

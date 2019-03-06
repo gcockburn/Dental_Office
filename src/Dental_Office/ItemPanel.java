@@ -40,4 +40,12 @@ public class ItemPanel extends JPanel {
         
         orderNumFld.setText("");
     }
+    
+    public int getNumToOrder() {
+        return(Integer.parseInt(orderNumFld.getText()));
+    }
+    
+    public double getPrice() {
+        return(Double.parseDouble(priceLbl.getText()));
+    }
 }

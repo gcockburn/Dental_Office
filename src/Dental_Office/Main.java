@@ -21,7 +21,7 @@ public class Main {
     public static String[] inventory = {"Surgical Masks", "Nitrile Gloves", "Molding Clay", "Dental Wire", "Dental Elastics", "Cotton Balls", "Floss", "Filling Metal"};
     public static int[] stocks = loadStock("stock.txt");
     public static double[] prices = {24, 28, 60, 75, 15, 15, 20, 135};
-    public static double clinicMoney;
+    public static double clinicMoney = loadMoney("money.txt");
     
     public static ArrayList<Employee> employees = new ArrayList<>(); 
     
@@ -36,6 +36,8 @@ public class Main {
         passwords.add("ist");
         usernames.add("admin");
         passwords.add("admin");
+        
+        System.out.println(clinicMoney);
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -68,6 +70,27 @@ public class Main {
                 sw = new SelectionWindow();
             }
         });
+    }
+    
+    public static double loadMoney(String filename) {
+        
+        double tempMoney = -1;
+        
+        try {
+
+            BufferedReader file = new BufferedReader(new FileReader(filename));
+            
+            while (file.ready()) {
+                
+                tempMoney = Double.parseDouble(file.readLine());
+            }
+        }
+        catch (IOException e) {
+
+            System.out.println(e);
+        }
+        
+        return tempMoney;
     }
     
     public static int[] loadStock(String filename) {

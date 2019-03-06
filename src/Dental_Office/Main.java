@@ -21,7 +21,7 @@ public class Main {
 
     public static String[] inventory = {"Surgical Masks", "Nitrile Gloves", "Molding Clay", "Dental Wire", "Dental Elastics", "Cotton Balls", "Floss", "Filling Metal"};
     public static int[] stocks = {};
-    public static double[] prices = {};
+    public static double[] prices = {24, 28, 60, 75, 15, 15, 20, 135};
     public static double clinicMoney;
     
     public static ArrayList<Employee> employees = new ArrayList<>(); 

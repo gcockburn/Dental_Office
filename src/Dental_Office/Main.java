@@ -167,7 +167,11 @@ public class Main {
                 String tempArray[] = temp.split(",");
 
                 //the next line is customized for whatever class you are creating.
-                tempList.add(new Employee(tempArray[0], tempArray[1], Double.parseDouble(tempArray[2])));
+                if(tempArray[1].equals("Dentist")){
+                    tempList.add(new Dentist(tempArray[0], Double.parseDouble(tempArray[2]), tempArray[3]));
+                } else if(tempArray[1].equals("Secretary")){
+                    tempList.add(new Secretary(tempArray[0], Double.parseDouble(tempArray[2]), Integer.parseInt(tempArray[3])));
+                }
 
             }//End while
 
@@ -187,14 +191,18 @@ public class Main {
 
             PrintWriter file = new PrintWriter(new FileWriter(filename));
 
-            for (int i = 0; i < tempList.size(); i++) {
+            for (Employee currentEmployee : tempList) {
 
                 //the next lines are customized for whatever data you are getting.
                 String toSave = "";
-                toSave = tempList.get(i).getName();
-                toSave += "," + tempList.get(i).getPosition();
-                toSave += "," + tempList.get(i).getSalary();
-
+                toSave = currentEmployee.getName();
+                toSave += "," + currentEmployee.getPosition();
+                toSave += "," + currentEmployee.getSalary();
+                if(currentEmployee instanceof Dentist){
+                    toSave += "," + ((Dentist) currentEmployee).getDegrees();
+                } else if(currentEmployee instanceof Secretary){
+                    toSave += "," + ((Secretary) currentEmployee).getYearsExp(); 
+                }
                 file.println(toSave);
 
             }//End for loop

@@ -5,7 +5,7 @@ public class Dentist extends Employee{
     private String Degrees;
     private double satisfaction;
     
-    public Dentist(String n, String d, double sal) {
+    public Dentist(String n, double sal, String d) {
         
         super(n, "Dentist", sal);
         

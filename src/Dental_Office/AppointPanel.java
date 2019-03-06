@@ -1,6 +1,7 @@
 package Dental_Office;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,7 +18,12 @@ public class AppointPanel extends JPanel {
     private JLabel checkedLbl;
     
     public AppointPanel(Appointment a, int y) {
-        
+        ArrayList<Employee> tempList = new ArrayList<>();
+        for(int i = 0; i < Main.employees.size(); i++){
+            if(Main.employees.get(i) instanceof Dentist){
+                tempList.add(Main.employees.get(i));
+            }
+        }
         setLayout(null);
         setBounds(0, y, 250, 60);
         setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
@@ -25,7 +31,7 @@ public class AppointPanel extends JPanel {
         nameLbl = new JLabel(a.getPName());
         nameLbl.setBounds(10, 10, 100, 20);
         add(nameLbl);
-        dentLbl = new JLabel("Dr. " + Main.employees.get(a.getDName()).getName() + "");
+        dentLbl = new JLabel("Dr. " + tempList.get(a.getDName()).getName() + "");
         dentLbl.setBounds(10, 30, 150, 20);
         add(dentLbl);
         timeLbl = new JLabel(a.getTime());

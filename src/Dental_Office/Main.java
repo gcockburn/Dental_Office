@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class Main {
@@ -37,7 +36,6 @@ public class Main {
         passwords.add("ist");
         usernames.add("admin");
         passwords.add("admin");
-        
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -80,10 +78,13 @@ public class Main {
 
             BufferedReader file = new BufferedReader(new FileReader(filename));
             
+            int i = 0;
+            
             while (file.ready()) {
                 
-                int i = 0;
                 tempStock[i] = Integer.parseInt(file.readLine());
+                
+                i++;
             }
         }
         catch (IOException e) {

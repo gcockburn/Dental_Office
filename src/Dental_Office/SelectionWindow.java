@@ -14,6 +14,8 @@ public class SelectionWindow extends javax.swing.JFrame {
     public SelectionWindow() {
         initComponents();
         setVisible(true);
+        setResizable(false);
+        setTitle("Select");
     }
 
     @SuppressWarnings("unchecked")

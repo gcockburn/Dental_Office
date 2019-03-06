@@ -76,10 +76,10 @@ public class HireFrame extends JFrame implements ActionListener {
         
         if(ae.getSource() == hireBtn) {
             if(posComBox.getSelectedIndex() == 1) {
-                Main.employees.add(new Secretary(nameFld.getText(), Integer.parseInt(optionFld.getText()), Integer.parseInt(salaryFld.getText())));
+                Main.employees.add(new Secretary(nameFld.getText(), Integer.parseInt(salaryFld.getText()), Integer.parseInt(optionFld.getText())));
             }
             else if(posComBox.getSelectedIndex() == 2) {
-                Main.employees.add(new Dentist(nameFld.getText(), optionFld.getText(), Integer.parseInt(salaryFld.getText())));
+                Main.employees.add(new Dentist(nameFld.getText(), Integer.parseInt(salaryFld.getText()), optionFld.getText()));
             }
             
             Main.sw.lw.adw.empList.refreshEmps();

@@ -4,7 +4,7 @@ public class Secretary extends Employee{
     
     private int yearsExp;
     
-    public Secretary(String n, int exp, double sal) {
+    public Secretary(String n, double sal, int exp) {
         
         super(n, "Secretary", sal);
         

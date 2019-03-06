@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class LoginWindow extends JFrame implements ActionListener{
@@ -16,7 +17,7 @@ public class LoginWindow extends JFrame implements ActionListener{
     private JLabel userLbl;
     private JLabel passLbl;
     private JTextField userField;
-    private JTextField passField;
+    private JPasswordField passField;
     private JButton loginBtn;
     
     public AppointmentWindow aw;
@@ -53,7 +54,7 @@ public class LoginWindow extends JFrame implements ActionListener{
         passLbl.setBounds(15, 150, 80, 20);
         mainPanel.add(passLbl);
         
-        passField = new JTextField();
+        passField = new JPasswordField();
         passField.setBounds(100, 150, 150, 26);
         mainPanel.add(passField);
         
